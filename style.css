@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+:root{
+    --clr-Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+    --clr-Light-Grayish-Blue: hsl(234, 14%, 74%);
+    --clr-Grayish-Blue: hsl(233, 13%, 49%);
+    --clr-Dark-Grayish-Blue: hsl(232, 13%, 33%);
+    --clr-Linear-Gradient: hsl(236, 72%, 79%) to hsl(237, 63%, 64%);
+    --clr-font-family: 'Montserrat', sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: var(--clr-font-family);
+    font-size: 15px;
+    background: url("bg-top.svg"),url("bg-bottom.svg"), var(--clr-Very-Light-Grayish-Blue) ;
+    background-repeat: no-repeat, no-repeat;
+    background-position: top right, left bottom;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+h1{
+    color: var(--clr-Grayish-Blue);
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+/* toggle checkbox */
+.switch-container{
+    color: var(--clr-Light-Grayish-Blue);
+    font-weight: 700;
+    margin-bottom: 80px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+}
+/* imortant set display to none */
+input[type="checkbox"].toggle{
+    display: none;
+}
+  /* important */
+input[type="checkbox"].toggle + label{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+input[type="checkbox"].toggle:hover + label{
+   opacity: 70%;
+}
+input[type="checkbox"].toggle + label::before{
+    /* background of the toggle */
+    content: "";
+    width: 58px;
+    height: 34px; 
+    background: linear-gradient(90deg,hsl(236, 72%, 79%) , hsl(237, 63%, 64%)) ;
+    border-radius: 2rem;
+
+}
+input[type="checkbox"].toggle + label::after{
+    /* toggle slider */
+    position: absolute;
+    content: "";
+    width: 28px;
+    height: 28px;
+    background: white ;
+    border-radius: 50%;
+    transform: translateX(100%);
+    transition: all .2s ease-in-out;
+}
+input[type="checkbox"].toggle:checked + label::after{
+    /* check console to know when its checked  */
+    transform: translateX(9%);
+}
+.plans{
+    width: 90%;
+}
+.plan{
+    color: var(--clr-Grayish-Blue);
+    text-align: center;
+    margin-bottom: 30px;
+    background-color:white;
+    padding: 35px;
+    border-radius: .8rem;
+    box-shadow: 0px 0px 30px  hsla(234, 14%, 74%, 0.35);
+}
+/* hsl(234, 14%, 74%)  */
+.plan p{
+    font-weight: 700;
+    margin: 18px;
+}
+.plan h1{
+    color: var(--clr-Dark-Grayish-Blue);
+    margin-top:0 ;
+    margin-bottom: 30px;
+    font-weight: 700;
+    font-size: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.plan span{
+    color: var(--clr-Dark-Grayish-Blue);
+    font-weight: 700;
+    font-size: 5rem;
+}
+.plan h3{
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+hr{
+    border: none;
+    border-top: 1px solid var(--clr-Light-Grayish-Blue);
+}
+button{
+    width: 100%;
+    border: none;
+    background: linear-gradient(90deg,hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+    padding: 15px 60px;
+    border-radius: .4rem;
+    margin-top: 35px ;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: inherit;
+    letter-spacing: .1rem;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+}
+button:hover{
+    background: transparent;
+    color:hsl(237, 63%, 64%);
+    border: 1.5px solid hsl(237, 63%, 64%);
+}
+/* professional */
+.professional{
+    color: white;
+    background: linear-gradient(90deg,hsl(236, 72%, 79%), hsl(237, 63%, 64%));
+}
+.professional h1{
+    color: white;
+}
+.professional span{
+    color: white;
+}
+.professional hr{
+    border-top: 1px solid white;
+    opacity: 40%;
+}
+.professional button{
+    background: white;
+    color: hsl(237, 63%, 64%) ;
+    border: 1.5px solid white ;
+}
+.professional button:hover{
+    background: transparent;
+    color: white;
+}
+/* set annually dsiplay to none */
+.annually{
+    display: none;
+}
+@media screen and (min-width:900px){
+    .container{
+        height: 100vh;
+    }
+    h1{
+        margin-top: 0;
+    }
+    .plans{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        width: 75%;
+        position: relative;
+    }
+    .plan{
+        width: 100%;
+    }
+    .plans .professional{
+        padding: 70px 20px;
+        transform: scaleX(1.05);
+    }
+
+}
+
+
